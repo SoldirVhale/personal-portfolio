@@ -33,13 +33,29 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    padding-right: 35px;
-    gap: 70px;
-    font-size: 30px;
+    padding-right: 50px;
+    font-size: 36px;
+    overflow: hidden;
 }
 
 .nav-link {
     text-decoration: none;
+    padding: 20px;
+}
+
+.hidden-icon {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.nav-link:hover .hidden-icon {
+    opacity: 1;
+}
+
+.nav-link:hover {
+    background: navy;
+    padding-top: 40px;
+    padding-bottom: 40px;
 }
 
 /*WELCOME SECTION*/
@@ -65,11 +81,48 @@
     font-style: italic;
 }
 
+.dot {
+    opacity: 0;
+    animation: fadeInOut 3s infinite;
+}
+.dot1 {
+    animation-delay: 0s;
+}
+.dot2 {
+    animation-delay: 0.5s;
+}
+.dot3 {
+    animation-delay: 1s;
+}
+
+@keyframes fadeInOut {
+    0%, 25% {
+        opacity: 0;
+    }
+    30%, 50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+
+
+
+
+
 /*PROJECTS SECTION*/
 
 #projects {
-    height: 100vh;
     background: linear-gradient(to right, #06062b 20%, #010155 100%);
+    text-align: center;
+}
+
+.project-tile {
+    background: gray;
+    text-decoration: none;
+    width: auto;
 }
 
 .project-section-header {
@@ -79,15 +132,99 @@
 }
 
 .project-image {
-    height: 300px;
-    width: 460px;
+    width: 100%;
     object-fit: cover;
+}
+
+.project-title {
+    text-align: center;
+    font-size: 24px;
+    padding: 20px 0 20px 0;
+}
+.code {
+    color: gray;
+    transition: 0.8s ease;
+    font-weight: bold;
+}
+
+.project-tile:hover .code {
+    color: turquoise;
+    
 }
 
 .project-grid {
     display: grid;
     grid-template-columns: auto auto auto;
     grid-gap: 50px;
-    margin: 40px 20px 40px 20px;
-    background-color: #000000;
+    margin: 100px 50px 100px 25px;
+}
+
+.show-all {
+    display: inline-block;
+    background-color: #282828;
+    padding: 20px;
+    font-size: 25px;
+    text-decoration: none;
+    margin-bottom: 50px;
+    border-radius: 3px;
+    transition: background-color 0.8s ease;
+    
+}
+
+.show-all:hover {
+    background-color: crimson;
+    
+    
+}
+
+/*CONTACT*/
+
+#contact {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #282828;
+    height: 100vh;
+    border-top: 1px solid #FFFFFF;
+}
+
+#contact h2 {
+    font-size: 50px;
+}
+
+#contact p {
+    font-size: 25px;
+    padding-top: 20px;
+}
+
+.social {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    
+}
+
+.social-links {
+    text-decoration: none;
+    padding-top: 60px;
+    font-size: 30px;
+    padding-right: 40px;
+    transition: transform 0.3s ease-out;
+}
+
+.social-links:hover {
+    transform: translateY(8px);
+}
+
+
+
+/*FOOTER*/
+
+footer {
+    background-color: #282828;
+    border-top: 1px solid crimson;
+    text-align: center;
+    padding: 20px 0 20px 0;
+    font-size: 24px;
 }
